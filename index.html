@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Home</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./img/Asset 5.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Apply saved theme before paint to avoid a flash of the wrong theme
+        (function () {
+            var saved = localStorage.getItem('portfolio-theme');
+            if (saved === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+</head>
+
+<body>
+
+    <header id="top">
+        <div class="name">
+            <h1><strong>MUHAMMAD AHMED</strong></h1>
+            <p><em><b>IT TECNICIAN</b></em></p>
+        </div>
+        <div class="header-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+            <img src="./img/WhatsApp Image 2024-03-02 at 23.54.53_181f454f.jpg" alt="baloon" id="profilePic">
+        </div>
+    </header>
+
+    <nav>
+        <div class="logo2">
+            <a href="#top" id="navHome">Home</a>
+            <a href="#about" id="navAbout">About</a>
+            <a href="#project" id="navProject">Projects</a>
+            <a href="#contact" id="navContact">Contact</a>
+        </div>
+    </nav>
+    <div id="scrollProgress"></div>
+
+    <main>
+        <section class="hero reveal">
+            <h2>Hi, I'm <span>Muhammad Ahmed</span></h2>
+            <p>An IT Technician and recent Computer Science graduate who enjoys building clean, functional web experiences.</p>
+            <div class="hero-actions">
+                <a class="btn" href="#project">View My Work</a>
+                <a class="btn btn-outline" href="#contact">Contact Me</a>
+            </div>
+        </section>
+
+        <div class="layout">
+            <aside class="sidebar">
+                <div id="about-mount"></div>
+            </aside>
+
+            <div class="main-content">
+                <section id="project" class="section">
+                    <h1>PROJECT</h1>
+                    <br>
+                    <div class="project-grid">
+                        <div class="projects reveal">
+                            <h2>Project1</h2>
+                            <span class="status-badge status-completed">Completed</span>
+                            <br>
+                            <img src="./img/12.jpeg" alt="baloon" id="image">
+                            <br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores architecto quae modi quaerat
+                                quisquam
+                                impedit ducimus consequuntur vel consequatur, sed molestiae error aspernatur similique non
+                                aliquid
+                                eius.
+                                Dolores, enim accusamus.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a class="project-link live" href="project01">Live Demo</a>
+                                <a class="project-link code" href="project01"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                        <div class="projects reveal">
+                            <h2>Project2</h2>
+                            <span class="status-badge status-completed">Completed</span>
+                            <br>
+                            <img src="./img/13.jpeg" alt="baloon" id="image">
+                            <br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores architecto quae modi quaerat
+                                quisquam
+                                impedit ducimus consequuntur vel consequatur, sed molestiae error aspernatur similique non
+                                aliquid
+                                eius.
+                                Dolores, enim accusamus.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Bootstrap</span>
+                            </div>
+                            <div class="project-links">
+                                <a class="project-link live" href="project02">Live Demo</a>
+                                <a class="project-link code" href="project02"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                        <div class="projects reveal">
+                            <h2>Project3</h2>
+                            <span class="status-badge status-progress">In Progress</span>
+                            <br>
+                            <img src="./img/mohammad-rahmani-8qEB0fTe9Vw-unsplash.jpg" alt="baloon" id="image">
+                            <br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores architecto quae modi quaerat
+                                quisquam
+                                impedit ducimus consequuntur vel consequatur, sed molestiae error aspernatur similique non
+                                aliquid
+                                eius.
+                                Dolores, enim accusamus.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a class="project-link live" href="project03">Live Demo</a>
+                                <a class="project-link code" href="project03"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact" class="section reveal">
+                    <h2>CONTACT</h2>
+                    <div class="contact1">
+                        <h3>SOCIAL MEDIA</h3>
+                        <br>
+                        <div class="social">
+                            <a href="Facebook" class="social-facebook">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="Twitter" class="social-twitter">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="Instagram" class="social-instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="Github" class="social-github">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="LinkedIn" class="social-linkedin">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="Discord" class="social-discord">
+                                <i class="fa-brands fa-discord"></i>
+                            </a>
+                            <a href="Youtube" class="social-youtube">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="Whatsapp" class="social-whatsapp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="contact2">
+                        <h3>MESSAGE</h3>
+                        <br>
+                        <form class="message" id="contactForm" novalidate>
+                            <input type="text" name="from_name" id="Name" placeholder="Name" required>
+                            <br>
+                            <input type="email" name="reply_to" id="E_mail" placeholder="E-mail" required>
+                            <br>
+                            <textarea name="message" id="Message" placeholder="Message" required></textarea>
+                            <br>
+
+                            <!-- Honeypot: hidden from real users, bots tend to fill every field -->
+                            <input type="text" name="company_website" id="hp_field" class="hp-field" tabindex="-1" autocomplete="off">
+
+                            <!-- Human check: simple math captcha, no external service needed -->
+                            <div class="captcha-row">
+                                <label for="captchaAnswer" id="captchaQuestion">Loading check...</label>
+                                <input type="text" id="captchaAnswer" placeholder="Answer" inputmode="numeric" autocomplete="off">
+                            </div>
+
+                            <br>
+                            <button class="bott" type="submit" id="sendBtn" disabled>SEND</button>
+                            <p id="formStatus" class="form-status"></p>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-social">
+            <a href="Facebook" class="social-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="Github" class="social-github" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+            <a href="LinkedIn" class="social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="Instagram" class="social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p>&copy; <span id="footerYear"></span> Muhammad Ahmed. All rights reserved.</p>
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+    </footer>
+
+    <script src="./about-section.js"></script>
+    <script src="./visual-effects.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
