@@ -1,33 +1,11 @@
-// ===================================================
-// CONTACT FORM — EmailJS Integration + Security Layers
-// ===================================================
-// SETUP (one-time, free):
-// 1. Go to https://www.emailjs.com and create a free account
-// 2. Add an Email Service (e.g. Gmail) -> copy the "Service ID"
-// 3. Create an Email Template -> copy the "Template ID"
-//    Template should use variables: {{from_name}}, {{reply_to}}, {{message}}
-// 4. Go to Account > General -> copy your "Public Key"
-// 5. Paste all three values below.
-// 6. In EmailJS dashboard, go to Account > Security and add your live
-//    domain under "Allowed Origins" — this stops anyone else from using
-//    your public key on a different website. This is the real protection,
-//    since a public key on a static site can always be seen via View Source.
-// Free plan = 200 emails/month, no backend/server needed.
-// ===================================================
-
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const EMAILJS_PUBLIC_KEY = "aU4yp4QR5pD2y28rt";
+const EMAILJS_SERVICE_ID = "service_5wxik6g";
+const EMAILJS_TEMPLATE_ID = "template_eb36ya5";
 
 if (window.emailjs) {
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 }
 
-// ---------------------------------------------------
-// Trusted email whitelist — loaded from allowed-emails.json
-// Edit that file to add/remove allowed domains or specific
-// emails without touching this script.
-// ---------------------------------------------------
 let allowedDomains = [];
 let allowedSpecificEmails = [];
 let whitelistLoaded = false;
@@ -49,9 +27,6 @@ async function loadEmailWhitelist() {
     }
 }
 
-// ---------------------------------------------------
-// Element references
-// ---------------------------------------------------
 const contactForm = document.getElementById("contactForm");
 const nameInput = document.getElementById("Name");
 const emailInput = document.getElementById("E_mail");
@@ -64,9 +39,6 @@ const captchaAnswerInput = document.getElementById("captchaAnswer");
 
 let captchaCorrectAnswer = null;
 
-// ---------------------------------------------------
-// 3. Human check — simple math captcha (free, no external service)
-// ---------------------------------------------------
 function generateCaptcha() {
     const a = Math.floor(Math.random() * 10) + 1;
     const b = Math.floor(Math.random() * 10) + 1;
@@ -79,11 +51,6 @@ function generateCaptcha() {
     }
 }
 
-// ---------------------------------------------------
-// 5. Text-only checker — blocks HTML/script/injection attempts
-// Allows normal letters, numbers, spaces and common punctuation.
-// Rejects anything containing < > tags, or javascript: patterns.
-// ---------------------------------------------------
 function containsSuspiciousContent(value) {
     const htmlTagPattern = /<[^>]*>/;
     const scriptPattern = /javascript:|on\w+\s*=/i;
@@ -97,9 +64,6 @@ function isPlainTextSafe(value) {
     return safePattern.test(value) && !containsSuspiciousContent(value);
 }
 
-// ---------------------------------------------------
-// 2. Email domain validator
-// ---------------------------------------------------
 function isValidEmailFormat(value) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(value);
@@ -113,10 +77,6 @@ function isTrustedEmailDomain(value) {
     return allowedDomains.includes(domain);
 }
 
-// ---------------------------------------------------
-// 1. Submit button stays disabled until all fields are
-// filled AND pass their individual checks
-// ---------------------------------------------------
 function updateSendButtonState() {
     const nameVal = nameInput.value.trim();
     const emailVal = emailInput.value.trim();
@@ -144,9 +104,6 @@ function updateSendButtonState() {
     });
 });
 
-// ---------------------------------------------------
-// Form submit handler — final full validation, then send
-// ---------------------------------------------------
 if (contactForm) {
     generateCaptcha();
     loadEmailWhitelist();
@@ -218,7 +175,7 @@ if (contactForm) {
         })
         .then(function () {
             statusEl.textContent = "Message sent successfully! I'll get back to you soon.";
-            statusEl.style.color = "#27ae60";
+            statusEl.style.color = "#15803d";
             contactForm.reset();
             generateCaptcha();
         })
