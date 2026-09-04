@@ -158,7 +158,7 @@ if (contactForm) {
         }
 
         // Keys not configured yet
-        if (EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY") {
+        if (EMAILJS_PUBLIC_KEY === "aU4yp4QR5pD2y28rt") {
             statusEl.textContent = "Form is wired up — add your EmailJS keys in script.js to go live.";
             statusEl.style.color = "#c0392b";
             return;
