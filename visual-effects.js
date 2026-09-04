@@ -1,10 +1,3 @@
-// ===================================================
-// VISUAL EFFECTS — theme toggle + scroll reveal
-// ===================================================
-
-// ---------------------------------------------------
-// Scroll Progress Bar
-// ---------------------------------------------------
 const scrollProgressEl = document.getElementById("scrollProgress");
 
 function updateScrollProgress() {
@@ -18,9 +11,6 @@ function updateScrollProgress() {
 window.addEventListener("scroll", updateScrollProgress, { passive: true });
 window.addEventListener("resize", updateScrollProgress);
 
-// ---------------------------------------------------
-// Scrollspy — highlight the nav link for the section in view
-// ---------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
     updateScrollProgress();
 
@@ -56,9 +46,6 @@ if (footerYearEl) {
     footerYearEl.textContent = new Date().getFullYear();
 }
 
-// ---------------------------------------------------
-// Dark Mode Toggle
-// ---------------------------------------------------
 const themeToggleBtn = document.getElementById("themeToggle");
 const THEME_STORAGE_KEY = "portfolio-theme";
 
@@ -84,9 +71,6 @@ if (themeToggleBtn) {
     });
 }
 
-// ---------------------------------------------------
-// Scroll Reveal — fade/slide elements in as they enter view
-// ---------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
     const revealEls = document.querySelectorAll(".reveal");
 
