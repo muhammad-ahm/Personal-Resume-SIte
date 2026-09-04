@@ -1,4 +1,4 @@
-const EMAILJS_PUBLIC_KEY = "oBV5c-YW_Ls-JelMp";
+const EMAILJS_PUBLIC_KEY = "wrNv2DhKAGsh-yE6g";
 const EMAILJS_SERVICE_ID = "service_5wxik6g";
 const EMAILJS_TEMPLATE_ID = "template_eb36ya5";
 
@@ -158,7 +158,7 @@ if (contactForm) {
         }
 
         // Keys not configured yet
-        if (EMAILJS_PUBLIC_KEY === "oBV5c-YW_Ls-JelMp") {
+        if (EMAILJS_PUBLIC_KEY === "wrNv2DhKAGsh-yE6g") {
             statusEl.textContent = "Form is wired up — add your EmailJS keys in script.js to go live.";
             statusEl.style.color = "#c0392b";
             return;
