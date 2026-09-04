@@ -153,6 +153,9 @@ h1, h2, h3 {
     font-family: var(--font-heading);
 }
 
+/* ===================================================
+   HEADER + NAV
+   =================================================== */
 header {
     display: flex;
     justify-content: space-between;
@@ -415,6 +418,42 @@ nav a.nav-active {
     color: var(--color-text-on-dark-soft);
 }
 
+.experience-item {
+    margin-bottom: 0.75rem;
+}
+
+.experience-period {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--color-primary-light);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin: 0.15rem 0;
+}
+
+.certifications-list {
+    width: 100%;
+    max-width: 20rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.certifications-list li {
+    position: relative;
+    padding-left: 1.1rem;
+    font-size: 0.9rem;
+}
+
+.certifications-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-light);
+    font-weight: 700;
+}
+
 /* ===================================================
    PROJECTS
    =================================================== */
@@ -581,6 +620,8 @@ nav a.nav-active {
 .project-video-body video,
 .project-video-body iframe {
     width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
     border-radius: var(--radius-sm);
     border: none;
 }
@@ -674,11 +715,6 @@ nav a.nav-active {
     object-fit: cover;
     filter: grayscale(65%);
     transition: filter 0.35s ease, transform 0.35s ease;
-}
-
-.projects picture {
-    display: block;
-    width: 100%;
 }
 
 .projects:hover .project-image {
