@@ -158,11 +158,7 @@ if (contactForm) {
         }
 
         // Keys not configured yet
-        if (EMAILJS_PUBLIC_KEY === "wrNv2DhKAGsh-yE6g") {
-            statusEl.textContent = "Form is wired up — add your EmailJS keys in script.js to go live.";
-            statusEl.style.color = "#c0392b";
-            return;
-        }
+        
 
         sendBtn.disabled = true;
         sendBtn.textContent = "SENDING...";
