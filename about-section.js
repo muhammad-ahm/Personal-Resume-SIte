@@ -1,32 +1,32 @@
-// ===================================================
-// "About" section renderer
-// Mount point required in HTML: <div id="about-mount"></div>
-// (Site is a single-page (index.html) layout — About, Projects,
-// and Contact all live here as scrollable sections.)
-// ===================================================
+
 
 const ABOUT_DATA = {
-    summary: `A recent <i>Computer Science Graduate</i> with a <i>BSCS degree</i> from
-        <b>SZABIST University</b>. Equipped with a solid foundation in
-        <em>Programming, Problem-Solving, and Technology</em>, I am actively seeking job
-        opportunities to apply my skills and contribute to innovative projects in the
-        tech industry.`,
+    summary: `I'm a <i>Computer Science student</i> at <b>SZABIST University</b>, currently in my
+        second year. I enjoy both sides of the work — sitting in Figma thinking through how a
+        screen should feel, and then actually building it. I've shipped a browser extension
+        that's live and in use, designed a student LMS as a semester project, and built a
+        handful of personal projects just to push myself further. Right now I'm getting more
+        serious about <i>React</i> and slowly learning what it takes to build a game from the
+        ground up.`,
 
-    education: `<b>SZABIST University:</b><br><i>Specialization in IT Technician</i><br>
+    experience: `<b>WordPress Developer — Sysartx</b> <i>(Internship)</i><br>
+        Themes, plugins, performance, and SEO — handled in a real work environment with real
+        clients and real deadlines. This experience taught me how things actually work outside
+        the classroom.`,
+
+    education: `<b>SZABIST University:</b><br><i>BS Computer Science (in progress)</i><br>
         <b>Govt. Degree College Boys and Girls SRE III Majeed:</b><br>
         <i>Intermediate in Pre-Engineering</i><br>
         <b>Arqam Public School:</b><br><i>Matriculation in Science</i>`,
 
     skills: [
-        { label: "Programming Languages: C, C++, Python", value: 87 },
-        { label: "Web Development: HTML, CSS, JavaScript", value: 75 },
-        { label: "Database Management: SQL", value: 56 },
-        { label: "Operating Systems: Windows, Linux", value: 77 },
-        { label: "Problem-Solving and Critical Thinking", value: 90 },
-        { label: "Team Collaboration and Communication", value: 65 },
-        { label: "Adaptability and Continuous Learning", value: 71 },
-        { label: "Attention to Detail and Quality Assurance", value: 69 },
-        { label: "Time Management and Project Management", value: 88 }
+        { label: "HTML, CSS & JavaScript", value: 85 },
+        { label: "PHP & WordPress Development", value: 80 },
+        { label: "React (Component-Based UI)", value: 65 },
+        { label: "Java & MySQL", value: 75 },
+        { label: "UI/UX Design (Figma)", value: 78 },
+        { label: "Debugging & Problem-Solving", value: 82 },
+        { label: "Git & Version Control", value: 70 }
     ],
 
     languages: `English: Fluent <br><br> Urdu: Native`
@@ -48,12 +48,18 @@ function renderAboutSection() {
 
     return `
         <section id="about" class="reveal">
-            <h1>ABOUT</h1>
+            <h2>ABOUT</h2>
             <br>
             <div>
                 <h3 id="topic">SUMMARY</h3>
                 <br>
                 <p class="about-text">${ABOUT_DATA.summary}</p>
+            </div>
+            <br>
+            <div>
+                <h3 id="topic">EXPERIENCE</h3>
+                <br>
+                <p class="about-text">${ABOUT_DATA.experience}</p>
             </div>
             <br>
             <div>
