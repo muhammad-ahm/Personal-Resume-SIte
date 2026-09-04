@@ -1,6 +1,4 @@
-/* ===================================================
-   DESIGN TOKENS — Visual Design System
-   =================================================== */
+
 :root {
     /* Color palette — deep indigo/violet, warm accents */
     --color-bg: #f6f5fb;
@@ -80,6 +78,47 @@ html {
     box-sizing: border-box;
 }
 
+/* Visually hidden but still readable by screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip-to-content link: hidden until keyboard-focused */
+.skip-link {
+    position: absolute;
+    top: -3rem;
+    left: 0.5rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    z-index: 1000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0.5rem;
+}
+
+/* Consistent, visible focus state for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-primary-light);
+    outline-offset: 2px;
+}
+
 body {
     font-family: var(--font-body);
     background-color: var(--color-bg);
@@ -114,9 +153,6 @@ h1, h2, h3 {
     font-family: var(--font-heading);
 }
 
-/* ===================================================
-   HEADER + NAV
-   =================================================== */
 header {
     display: flex;
     justify-content: space-between;
@@ -128,7 +164,7 @@ header {
 }
 
 .name h1 {
-    font-size: 1.75rem;
+    font-size: clamp(1.25rem, 1rem + 1.5vw, 1.75rem);
     font-weight: 700;
     letter-spacing: 0.5px;
 }
@@ -182,6 +218,10 @@ nav {
 }
 
 nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
     color: var(--color-text-on-dark-soft);
     text-decoration: none;
     margin: 0 0.25rem;
@@ -224,7 +264,7 @@ nav a.nav-active {
 }
 
 .hero h2 {
-    font-size: 2.4rem;
+    font-size: clamp(1.5rem, 1.1rem + 3vw, 2.4rem);
     font-weight: 800;
     margin-bottom: 1rem;
 }
@@ -269,18 +309,32 @@ nav a.nav-active {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    flex-direction: row;
-    margin: 0 1rem 0rem 0;
+    flex-direction: column;
+    margin: 0;
     width: 100%;
     min-height: 100vh;
+}
+
+@media (min-width: 900px) {
+    .layout {
+        flex-direction: row;
+        margin: 0 1rem 0rem 0;
+    }
 }
 
 .sidebar {
     background: linear-gradient(180deg, var(--color-dark) 0%, var(--color-dark-soft) 100%);
     color: var(--color-text-on-dark);
-    width: 35%;
+    width: 100%;
     margin: 0;
-    padding: 1rem 0;
+    padding: 1.5rem 1rem;
+}
+
+@media (min-width: 900px) {
+    .sidebar {
+        width: 35%;
+        padding: 1rem 0;
+    }
 }
 
 /* ===================================================
@@ -294,8 +348,8 @@ nav a.nav-active {
     margin: 1.5rem;
 }
 
-#about h1 {
-    font-size: 1.9rem;
+#about h2 {
+    font-size: clamp(1.4rem, 1.1rem + 2vw, 1.9rem);
     font-weight: 800;
     margin-bottom: 1rem;
     background: linear-gradient(90deg, var(--color-primary-light), var(--color-accent));
@@ -305,7 +359,8 @@ nav a.nav-active {
 }
 
 .about-text {
-    width: 20rem;
+    width: 100%;
+    max-width: 20rem;
     color: var(--color-text-on-dark-soft);
     font-size: 0.95rem;
     line-height: 1.7;
@@ -322,17 +377,20 @@ nav a.nav-active {
     flex-direction: column;
     background: linear-gradient(135deg, rgba(108, 75, 244, 0.35), rgba(255, 122, 89, 0.18));
     color: #ffffff;
-    padding: 0.75rem 0rem 0.75rem 2rem;
-    width: 20rem;
+    padding: 0.75rem 1.25rem;
+    width: 100%;
+    max-width: 20rem;
     border-radius: var(--radius-md);
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 1px;
     box-shadow: var(--shadow-sm);
+    text-align: center;
 }
 
 .skill-item {
-    width: 20rem;
+    width: 100%;
+    max-width: 20rem;
     margin: 0 0 1rem 0;
 }
 
@@ -362,9 +420,16 @@ nav a.nav-active {
    =================================================== */
 .main-content {
     color: var(--color-text);
-    width: 65%;
-    margin: 1rem;
+    width: 100%;
+    margin: 0;
     height: auto;
+}
+
+@media (min-width: 900px) {
+    .main-content {
+        width: 65%;
+        margin: 1rem;
+    }
 }
 
 .section {
@@ -378,8 +443,15 @@ nav a.nav-active {
     flex-direction: column;
 }
 
-#project h1 {
-    font-size: 1.9rem;
+#project h2 {
+    font-size: clamp(1.4rem, 1.1rem + 2vw, 1.9rem);
+    font-weight: 800;
+    margin: 1rem 0;
+    color: var(--color-text);
+}
+
+#games > h2 {
+    font-size: clamp(1.4rem, 1.1rem + 2vw, 1.9rem);
     font-weight: 800;
     margin: 1rem 0;
     color: var(--color-text);
@@ -463,6 +535,99 @@ nav a.nav-active {
     border-radius: var(--radius-pill);
 }
 
+.project-video {
+    width: 100%;
+    margin-top: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.project-video summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.65rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    background: rgba(108, 75, 244, 0.06);
+    transition: background 0.2s ease;
+}
+
+.project-video summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-video summary::marker {
+    display: none;
+    content: "";
+}
+
+.project-video summary:hover {
+    background: rgba(108, 75, 244, 0.12);
+}
+
+.project-video[open] summary {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.project-video-body {
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: var(--color-text-soft);
+    text-align: center;
+}
+
+.project-video-body video,
+.project-video-body iframe {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    border: none;
+}
+
+/* ===================================================
+   GAMES
+   =================================================== */
+.game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    max-width: 40rem;
+    margin: 0 auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 1.75rem;
+}
+
+.game-card h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+.game-card p {
+    color: var(--color-text-soft);
+    font-size: 0.9rem;
+}
+
+.game-embed-wrap {
+    width: 100%;
+    max-width: 552px;
+    margin: 0.75rem auto 0;
+}
+
+.game-embed-wrap iframe {
+    width: 100%;
+    height: 167px;
+    border: none;
+    border-radius: var(--radius-md);
+    display: block;
+}
+
 .project-links {
     display: flex;
     gap: 0.75rem;
@@ -474,6 +639,8 @@ nav a.nav-active {
 .project-link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    min-height: 44px;
     gap: 0.4rem;
     font-size: 0.85rem;
     font-weight: 600;
@@ -500,16 +667,21 @@ nav a.nav-active {
     box-shadow: var(--shadow-md);
 }
 
-#image {
-    width: 20rem;
-    height: 15rem;
+.project-image {
+    width: 100%;
+    height: 14rem;
     border-radius: var(--radius-md);
     object-fit: cover;
     filter: grayscale(65%);
     transition: filter 0.35s ease, transform 0.35s ease;
 }
 
-.projects:hover #image {
+.projects picture {
+    display: block;
+    width: 100%;
+}
+
+.projects:hover .project-image {
     filter: grayscale(0%);
     transform: scale(1.02);
 }
@@ -548,7 +720,7 @@ nav a.nav-active {
 }
 
 #contact h2 {
-    font-size: 1.6rem;
+    font-size: clamp(1.3rem, 1.05rem + 1.5vw, 1.6rem);
     font-weight: 800;
     margin-bottom: 1rem;
 }
@@ -573,10 +745,11 @@ nav a.nav-active {
 
 .social {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 40rem;
+    width: 100%;
+    max-width: 40rem;
     flex-wrap: wrap;
 }
 
@@ -625,7 +798,8 @@ nav a.nav-active {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 50rem;
+    width: 100%;
+    max-width: 50rem;
     height: auto;
 }
 
@@ -633,7 +807,8 @@ nav a.nav-active {
 .message textarea {
     justify-content: center;
     align-items: flex-start;
-    width: 30rem;
+    width: 100%;
+    max-width: 30rem;
     height: 3.5rem;
     border-radius: var(--radius-md);
     margin: 0.5rem;
@@ -672,7 +847,8 @@ nav a.nav-active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30rem;
+    width: 100%;
+    max-width: 30rem;
     margin: 0.5rem;
 }
 
@@ -684,7 +860,9 @@ nav a.nav-active {
 }
 
 .captcha-row input {
-    width: 10rem;
+    width: 100%;
+    max-width: 10rem;
+    min-height: 44px;
     padding: 10px;
     border-radius: var(--radius-md);
     border: 1.5px solid var(--color-border);
@@ -755,8 +933,8 @@ nav a.nav-active {
 .footer-social a {
     text-decoration: none;
     font-size: 1.2rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -775,7 +953,11 @@ nav a.nav-active {
 }
 
 .back-to-top {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 0.75rem;
     margin-top: 0.75rem;
     color: var(--color-primary-light);
     text-decoration: none;
@@ -829,12 +1011,17 @@ header {
     }
 }
 
-/* Media Query for Mobile Devices */
-@media (min-width: 375px) and (max-width: 525px) {
+/* Media Query for small phones (covers all widths up to 525px) */
+@media (max-width: 525px) {
     header {
         justify-content: center;
         flex-direction: column;
         flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .game-card {
+        padding: 1.1rem;
     }
  
     .name {
@@ -844,55 +1031,48 @@ header {
     }
 
     #profilePic {
-        margin: 0.5rem 0 0 0;
-        width: 10rem;
-        height: 10rem;
+        margin: 0.75rem 0 0 0;
+        width: 8rem;
+        height: 8rem;
     }
 
     .logo2 {
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     nav a {
         justify-content: center;
-        font-size: 14px;
-        margin: 10px;
+        font-size: 13px;
+        margin: 4px;
+        padding: 0.35rem 0.7rem;
     }
 
     .hero {
-        padding: 3rem 1.25rem;
+        padding: 2.5rem 1.25rem;
     }
 
-    .hero h2 {
-        font-size: 1.6rem;
-    }
-
-    .layout {
-        margin: 0;
+    .hero-actions {
         flex-direction: column;
+        width: 100%;
+        align-items: center;
     }
 
-    .sidebar {
+    .hero-actions .btn {
         width: 100%;
-        padding: 10px;
-        margin: 0;
+        max-width: 16rem;
     }
 
     #about {
-        margin: 0;
-        padding: 15px 0 0 25px;   
+        padding: 1.5rem 1rem;
+        text-align: center;
     }
 
     #topic {
-        font-size: 16px;
-        padding: 0.5rem;
-    }
-
-    .main-content {
-        width: 100%;
-        padding: 10px;
-        margin: 0;
+        font-size: 15px;
+        padding: 0.6rem 1rem;
+        text-align: center;
     }
 
     .section {
@@ -903,51 +1083,107 @@ header {
         grid-template-columns: 1fr;
     }
 
-    .projects {
-        justify-content: center;
-        margin: 0;
-    }
-
-    #image {
-        width: 100%;
-        height: 10rem;
-        justify-content: center;
+    .project-image {
+        height: 11rem;
     }
 
     .btn {
-        width: 8.5rem;
-        padding: 0.5rem;
-    }
-    
-    .contact1 {
-        margin: 0rem;
-        padding: 0.5px;
-    }
-    
-    .social{
-        width: 22rem;
+        width: 100%;
+        max-width: 14rem;
+        padding: 0.7rem 1rem;
     }
 
-    .contact2 {
-        margin: 0;
-        padding: 5px;
+    .social {
+        width: 100%;
     }
-    
+
+    .social a {
+        width: 2.8rem;
+        height: 2.8rem;
+        font-size: 1.6rem;
+    }
+
     .message {
-        width: 22rem;
-        height: 20rem;
+        width: 100%;
     }
-    
-    .message input {
-        width: 20rem;
-        height: 4rem;
+
+    .message input,
+    .message textarea {
+        width: 100%;
+        max-width: 100%;
     }
-    
+
     .bott {
-        width: 7rem;
+        width: 100%;
+        max-width: 12rem;
     }
 
     .site-footer {
         padding: 2rem 1rem;
+    }
+}
+
+/* Landscape phones: short viewport height, wider width */
+@media (max-height: 480px) and (orientation: landscape) {
+    header {
+        flex-direction: row;
+        padding: 1rem 1.5rem;
+    }
+
+    #profilePic {
+        width: 4rem;
+        height: 4rem;
+        margin: 0;
+    }
+
+    .hero {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .hero h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+        margin-bottom: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: row;
+    }
+
+    .hero-actions .btn {
+        width: auto;
+    }
+
+    nav {
+        padding: 0.5rem 1.5rem;
+    }
+}
+@media (min-width: 526px) and (max-width: 899px) {
+    header {
+        padding: 1.5rem 2rem;
+    }
+
+    nav {
+        padding: 0.75rem 2rem;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 3.5rem 2rem;
+    }
+
+    #about {
+        padding: 2rem;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .message,
+    .social {
+        max-width: 34rem;
     }
 }
