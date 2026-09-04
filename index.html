@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Home</title>
-    <meta name="description" content="Muhammad Ahmed — IT Technician and Computer Science graduate. Portfolio showcasing web development projects, skills, and ways to get in touch.">
+    <meta name="description" content="Muhammad Ahmed — Frontend Developer Intern at FlyRank AI, working with React & WordPress, focused on game development. Portfolio of projects, games, and ways to get in touch.">
     <meta name="theme-color" content="#6c4bf4">
 
     <!-- Open Graph / social share preview -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Muhammad Ahmed | Portfolio">
-    <meta property="og:description" content="IT Technician and Computer Science graduate. Explore my projects, skills, and get in touch.">
-    <meta property="og:image" content="./img/profile-416w.jpg">
+    <meta property="og:description" content="Frontend Developer Intern at FlyRank AI — React, WordPress, and game development. Explore my projects, games, and get in touch.">
+    <meta property="og:image" content="./img/profile-picture.png">
     <meta name="twitter:card" content="summary">
 
     <link rel="stylesheet" href="./style.min.css">
@@ -44,14 +44,11 @@
     <header id="top">
         <div class="name">
             <h1><strong>MUHAMMAD AHMED</strong></h1>
-            <p><em><b>IT TECHNICIAN</b></em></p>
+            <p><em><b>FRONTEND DEVELOPER</b></em></p>
         </div>
         <div class="header-right">
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
-            <picture>
-                <source type="image/webp" srcset="./img/profile-picture.png 104w, ./img/profile-picture.png 208w, ./img/profile-picture.png 416w" sizes="104px">
-                <img src="./img/profile-picture.png" srcset="./img/profile-picture.png 104w, ./img/profile-picture.png 208w, ./img/profile-picture.png 416w" sizes="104px" alt="Muhammad Ahmed" id="profilePic" loading="eager" fetchpriority="high" decoding="async" width="104" height="104">
-            </picture>
+            <img src="./img/profile-picture.png" alt="Muhammad Ahmed" id="profilePic" loading="eager" fetchpriority="high" decoding="async" width="104" height="104">
         </div>
     </header>
 
@@ -69,7 +66,7 @@
     <main id="main-content">
         <section class="hero reveal">
             <h2>Hi, I'm <span>Muhammad Ahmed</span></h2>
-            <p>I build interfaces that feel natural — so people can focus on what they're doing, not how to use the thing.</p>
+            <p>Frontend Developer Intern at FlyRank AI, working with React & WordPress — and deep in the game development pipeline on the side.</p>
             <div class="hero-actions">
                 <a class="btn" href="#project">View My Work</a>
                 <a class="btn btn-outline" href="#contact">Contact Me</a>
@@ -90,10 +87,7 @@
                             <h2>ForMai — Browser Extension</h2>
                             <span class="status-badge status-completed">Live</span>
                             <br>
-                            <picture>
-                                <source type="image/webp" srcset="./img/formai-project.webp 400w, ./img/formai-project.webp 800w" sizes="(max-width: 899px) 90vw, 400px">
-                                <img src="./img/formai-project.png" srcset="./img/formai-project.webp 400w, ./img/formai-project.webp 800w" sizes="(max-width: 899px) 90vw, 400px" alt="Code editor on a laptop, representing the ForMai browser extension project" class="project-image" loading="lazy" decoding="async" width="400" height="249">
-                            </picture>
+                            <img src="./img/formai-project.png" alt="ForMai browser extension interface" class="project-image" loading="lazy" decoding="async" width="400" height="249">
                             <br>
                             <p>A browser extension that helps users auto-fill long online forms. Three versions shipped so far — live, working, with the next version already in progress.</p>
                             <div class="tech-tags">
@@ -104,7 +98,7 @@
                             <details class="project-video">
                                 <summary>🎬 Watch Demo Video</summary>
                                 <div class="project-video-body">
-                                    <a href="https://youtu.be/b09QdzhesMw">ForMai Project</a>
+                                    <iframe src="https://www.youtube.com/embed/b09QdzhesMw" title="ForMai demo video" loading="lazy" allowfullscreen></iframe>
                                 </div>
                             </details>
                             <div class="project-links">
@@ -116,10 +110,7 @@
                             <h2>SZABIST Student LMS — UI/UX</h2>
                             <span class="status-badge status-progress">Design Concept</span>
                             <br>
-                            <picture>
-                                <source type="image/webp" srcset="./img/student-lms.webp 400w, ./img/student-lms.webp 800w" sizes="(max-width: 899px) 90vw, 400px">
-                                <img src="./img/student-lms.png" srcset="./img/student-lms.png 400w, ./img/student-lms.png 800w" sizes="(max-width: 899px) 90vw, 400px" alt="Close-up of interface code on screen, representing UI/UX design work" class="project-image" loading="lazy" decoding="async" width="400" height="250">
-                            </picture>
+                            <img src="./img/student-lms.png" alt="SZABIST Student LMS interface design" class="project-image" loading="lazy" decoding="async" width="400" height="250">
                             <br>
                             <p>A full learning management system interface designed for my university as a semester project — built so students would actually want to use it every day.</p>
                             <div class="tech-tags">
@@ -127,7 +118,12 @@
                                 <span class="tech-tag">UI/UX Design</span>
                                 <span class="tech-tag">Prototyping</span>
                             </div>
-                            
+                            <details class="project-video">
+                                <summary>🎬 Watch Demo Video</summary>
+                                <div class="project-video-body">
+                                    <p>Demo video coming soon.</p>
+                                </div>
+                            </details>
                             <div class="project-links">
                                 <a class="project-link live" href="https://figma.com/design/CVruA45mTKAV1MM9X0K6KP/SZABIST-Project" target="_blank" rel="noopener noreferrer">View Design</a>
                             </div>
@@ -136,10 +132,7 @@
                             <h2>eCommerce Store</h2>
                             <span class="status-badge status-completed">Completed</span>
                             <br>
-                            <picture>
-                                <source type="image/webp" srcset="./img/e-commerce.webp 400w, ./img/e-commerce.webp 800w" sizes="(max-width: 899px) 90vw, 400px">
-                                <img src="./img/e-commerce.jpg" srcset="./img/e-commerce.webp 400w, ./img/e-commerce.webp 800w" sizes="(max-width: 899px) 90vw, 400px" alt="Structured data on screen, representing the eCommerce database backend" class="project-image" loading="lazy" decoding="async" width="400" height="250">
-                            </picture>
+                            <img src="./img/e-commerce.jpg" alt="eCommerce Store admin and customer interface" class="project-image" loading="lazy" decoding="async" width="400" height="250">
                             <br>
                             <p>My first big independent project — a dual-role eCommerce system with separate Admin and Customer sides, built with Java and MySQL.</p>
                             <div class="tech-tags">
@@ -158,10 +151,7 @@
                             <h2>ToeXhek — Number Prediction Game</h2>
                             <span class="status-badge status-progress">Personal Project</span>
                             <br>
-                            <picture>
-                                <source type="image/webp" srcset="./img/ToeXhek.jpg 400w, ./img/ToeXhek.jpg 800w" sizes="(max-width: 899px) 90vw, 400px">
-                                <img src="./img/ToeXhek.jpg" srcset="./img/ToeXhek.jpg 400w, ./img/ToeXhek.jpg 800w" sizes="(max-width: 899px) 90vw, 400px" alt="Abstract dark background, representing the ToeXhek logic game" class="project-image" loading="lazy" decoding="async" width="400" height="250">
-                            </picture>
+                            <img src="./img/ToeXhek.jpg" alt="ToeXhek number prediction game interface" class="project-image" loading="lazy" decoding="async" width="400" height="250">
                             <br>
                             <p>A logic game where the app figures out a 4-digit number the user has in mind — built purely to challenge my own problem-solving, no tutorials involved.</p>
                             <div class="tech-tags">
@@ -169,7 +159,12 @@
                                 <span class="tech-tag">JavaFX</span>
                                 <span class="tech-tag">Algorithms</span>
                             </div>
-
+                            <details class="project-video">
+                                <summary>🎬 Watch Demo Video</summary>
+                                <div class="project-video-body">
+                                    <p>Demo video coming soon.</p>
+                                </div>
+                            </details>
                             <div class="project-links">
                                 <a class="project-link code" href="https://github.com/muhammad-ahm/muhammad-ahm/tree/main/UniversityProjects-main/3rdSemester/ToeXhek" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
                             </div>
@@ -178,19 +173,37 @@
                             <h2>Compact Assembly Toolkit</h2>
                             <span class="status-badge status-progress">Personal Project</span>
                             <br>
-                            <picture>
-                                <source type="image/webp" srcset="./img/CAT.jpg 400w, ./img/CAT.jpg 800w" sizes="(max-width: 899px) 90vw, 400px">
-                                <img src="./img/CAT.jpg" srcset="./img/CAT.jpg 400w, ./img/CAT.jpg 800w" sizes="(max-width: 899px) 90vw, 400px" alt="Code on screen with dramatic lighting, representing low-level systems programming" class="project-image" loading="lazy" decoding="async" width="400" height="249">
-                            </picture>
+                            <img src="./img/CAT.jpg" alt="Compact Assembly Toolkit interface" class="project-image" loading="lazy" decoding="async" width="400" height="249">
                             <br>
                             <p>A multi-tool app with a keyboard simulator, calculator, and a visual guide to computer inputs — started small and kept growing.</p>
                             <div class="tech-tags">
                                 <span class="tech-tag">Assembly (x86)</span>
                                 <span class="tech-tag">Systems Programming</span>
                             </div>
-                            
+                            <details class="project-video">
+                                <summary>🎬 Watch Demo Video</summary>
+                                <div class="project-video-body">
+                                    <p>Demo video coming soon.</p>
+                                </div>
+                            </details>
                             <div class="project-links">
                                 <a class="project-link code" href="https://github.com/muhammad-ahm/muhammad-ahm/tree/main/UniversityProjects-main/3rdSemester/Compact%20Assembly%20Toolkit" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+
+                        <div class="projects reveal">
+                            <h2>Personal Portfolio Website</h2>
+                            <span class="status-badge status-completed">Live</span>
+                            <br>
+                            <p>This very site — a single-page portfolio built from scratch and deployed live, covering everything from a working contact form to responsive design and dark mode.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Cloudflare Workers</span>
+                            </div>
+                            <div class="project-links">
+                                <a class="project-link live" href="https://personal-resume-site.iburaakahmed.workers.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -224,10 +237,10 @@
                         <h3>SOCIAL MEDIA</h3>
                         <br>
                         <div class="social">
-                            <a href="https://x.com/madebyahmed_" title="X.com/madebyahmed_" class="social-twitter" aria-label="Twitter">
-                                <i class="fa-brands fa-twitter"></i>
+                            <a href="https://x.com/madebyahmed_" target="_blank" rel="noopener noreferrer" class="social-twitter" aria-label="X (Twitter)">
+                                <i class="fa-brands fa-x-twitter"></i>
                             </a>
-                            <a href="https://www.instagram.com/madebyahmed_/" title="Instagram.com/madebyahmed_" class="social-instagram" aria-label="Instagram">
+                            <a href="https://www.instagram.com/madebyahmed_/" target="_blank" rel="noopener noreferrer" class="social-instagram" aria-label="Instagram">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
                             <a href="https://github.com/muhammad-ahm" target="_blank" rel="noopener noreferrer" class="social-github" aria-label="Github">
@@ -236,7 +249,7 @@
                             <a href="https://linkedin.com/in/Muhammad-ahm" target="_blank" rel="noopener noreferrer" class="social-linkedin" aria-label="LinkedIn">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
-                            <a href="https://www.youtube.com/channel/UCeLn1wU7rIyAfYJCgPmTvlw" title="Youtube.com/channel/" class="social-youtube" aria-label="Youtube">
+                            <a href="https://www.youtube.com/channel/UCeLn1wU7rIyAfYJCgPmTvlw" target="_blank" rel="noopener noreferrer" class="social-youtube" aria-label="Youtube">
                                 <i class="fa-brands fa-youtube"></i>
                             </a>
 
@@ -276,6 +289,13 @@
     </main>
 
     <footer class="site-footer">
+        <div class="footer-social">
+            <a href="https://x.com/madebyahmed_" target="_blank" rel="noopener noreferrer" class="social-twitter" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/madebyahmed_/" target="_blank" rel="noopener noreferrer" class="social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/muhammad-ahm" target="_blank" rel="noopener noreferrer" class="social-github" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/Muhammad-ahm" target="_blank" rel="noopener noreferrer" class="social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/channel/UCeLn1wU7rIyAfYJCgPmTvlw" target="_blank" rel="noopener noreferrer" class="social-youtube" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
         <p>&copy; <span id="footerYear"></span> Muhammad Ahmed. All rights reserved.</p>
         <a class="back-to-top" href="#top">Back to top ↑</a>
     </footer>
