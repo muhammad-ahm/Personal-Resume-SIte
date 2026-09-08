@@ -7,11 +7,6 @@ if (window.emailjs) {
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 }
 
-// ---------------------------------------------------
-// Trusted email whitelist — loaded from allowed-emails.json
-// Edit that file to add/remove allowed domains or specific
-// emails without touching this script.
-// ---------------------------------------------------
 let allowedDomains = [];
 let allowedSpecificEmails = [];
 let whitelistLoaded = false;
@@ -33,9 +28,6 @@ async function loadEmailWhitelist() {
     }
 }
 
-// ---------------------------------------------------
-// Element references
-// ---------------------------------------------------
 const contactForm = document.getElementById("contactForm");
 const nameInput = document.getElementById("Name");
 const emailInput = document.getElementById("E_mail");
@@ -48,9 +40,6 @@ const captchaAnswerInput = document.getElementById("captchaAnswer");
 
 let captchaCorrectAnswer = null;
 
-// ---------------------------------------------------
-// 3. Human check — simple math captcha (free, no external service)
-// ---------------------------------------------------
 function generateCaptcha() {
     const a = Math.floor(Math.random() * 10) + 1;
     const b = Math.floor(Math.random() * 10) + 1;
@@ -63,11 +52,6 @@ function generateCaptcha() {
     }
 }
 
-// ---------------------------------------------------
-// 5. Text-only checker — blocks HTML/script/injection attempts
-// Allows normal letters, numbers, spaces and common punctuation.
-// Rejects anything containing < > tags, or javascript: patterns.
-// ---------------------------------------------------
 function containsSuspiciousContent(value) {
     const htmlTagPattern = /<[^>]*>/;
     const scriptPattern = /javascript:|on\w+\s*=/i;
@@ -76,14 +60,10 @@ function containsSuspiciousContent(value) {
 }
 
 function isPlainTextSafe(value) {
-    // Letters (any language), numbers, spaces, and basic punctuation only
     const safePattern = /^[\p{L}\p{N}\s.,!?'"()\-:;@#&/]*$/u;
     return safePattern.test(value) && !containsSuspiciousContent(value);
 }
 
-// ---------------------------------------------------
-// 2. Email domain validator
-// ---------------------------------------------------
 function isValidEmailFormat(value) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(value);
@@ -97,10 +77,6 @@ function isTrustedEmailDomain(value) {
     return allowedDomains.includes(domain);
 }
 
-// ---------------------------------------------------
-// 1. Submit button stays disabled until all fields are
-// filled AND pass their individual checks
-// ---------------------------------------------------
 function updateSendButtonState() {
     const nameVal = nameInput.value.trim();
     const emailVal = emailInput.value.trim();
@@ -128,9 +104,6 @@ function updateSendButtonState() {
     });
 });
 
-// ---------------------------------------------------
-// Form submit handler — final full validation, then send
-// ---------------------------------------------------
 if (contactForm) {
     generateCaptcha();
     loadEmailWhitelist();
@@ -142,21 +115,18 @@ if (contactForm) {
         const emailVal = emailInput.value.trim();
         const messageVal = messageInput.value.trim();
 
-        // 1. All fields filled
         if (!nameVal || !emailVal || !messageVal) {
             statusEl.textContent = "Please fill in all fields.";
             statusEl.style.color = "#c0392b";
             return;
         }
 
-        // 5. Text-only check (blocks HTML/script injection attempts)
         if (!isPlainTextSafe(nameVal) || !isPlainTextSafe(messageVal)) {
             statusEl.textContent = "Name and message can only contain plain text — no code or links.";
             statusEl.style.color = "#c0392b";
             return;
         }
 
-        // 2. Email format + trusted domain check
         if (!isValidEmailFormat(emailVal)) {
             statusEl.textContent = "Please enter a valid email address.";
             statusEl.style.color = "#c0392b";
@@ -168,14 +138,12 @@ if (contactForm) {
             return;
         }
 
-        // Honeypot check — if this hidden field has a value, it's a bot
         if (hpField && hpField.value.trim() !== "") {
             statusEl.textContent = "Submission blocked.";
             statusEl.style.color = "#c0392b";
             return;
         }
 
-        // 3. Human check (captcha)
         const userCaptchaVal = parseInt(captchaAnswerInput.value.trim(), 10);
         if (isNaN(userCaptchaVal) || userCaptchaVal !== captchaCorrectAnswer) {
             statusEl.textContent = "Human check failed — please solve the math question correctly.";
@@ -184,7 +152,6 @@ if (contactForm) {
             return;
         }
 
-        // Keys not configured yet
         if (EMAILJS_PUBLIC_KEY === "wrNv2DhKAGsh-yE6g") {
             statusEl.textContent = "Form is wired up — add your EmailJS keys in script.js to go live.";
             statusEl.style.color = "#c0392b";
